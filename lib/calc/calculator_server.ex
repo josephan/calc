@@ -1,7 +1,9 @@
 defmodule Calc.CalculatorServer do
   use ExActor.GenServer
 
-  defstart start_link, do: initial_state(%{display: "0", numbers: [], value: 0, current_operation: :noop})
+  @init_state %{display: "0", numbers: [], value: 0, current_operation: :noop}
+
+  defstart start_link, do: initial_state(@init_state)
 
   defcall get_display, state: state, do: reply(state.display)
 
@@ -28,6 +30,10 @@ defmodule Calc.CalculatorServer do
 
   defcast divide, state: state do
     update_state(state, :divide) |> new_state
+  end
+
+  defcast clear, state: _state do
+    new_state(@init_state)
   end
 
   def update_state(state, new_operation) do

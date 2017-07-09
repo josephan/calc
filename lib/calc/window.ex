@@ -68,6 +68,7 @@ defmodule Calc.Window do
   def handle_button(@mult, calc), do: calc |> CalculatorServer.multiply
   def handle_button(@div, calc), do: calc |> CalculatorServer.divide
   def handle_button(@equal, calc), do: calc |> CalculatorServer.equals
+  def handle_button(@clear, calc), do: calc |> CalculatorServer.clear
   def handle_button(_, _), do: IO.puts("button clicked")
 
   def setup(panel) do

@@ -46,4 +46,11 @@ defmodule CalculatorServerTest do
     server |> CS.equals
     assert "2.0" == CS.get_display(server)
   end
+
+  test "clear button" do
+    {:ok, server} = CS.start_link
+    server |> CS.number(1)
+    server |> CS.clear
+    assert "0" == CS.get_display(server)
+  end
 end
