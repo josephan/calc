@@ -1,0 +1,2 @@
+%{"ex_actor": {:git, "https://github.com/sasa1977/exactor.git", "ee4397b22c927d5d70b1b6995fcc1f5afb0f6f28", []},
+  "exactor": {:hex, :exactor, "2.2.3", "a6972f43bb6160afeb73e1d8ab45ba604cd0ac8b5244c557093f6e92ce582786", [:mix], [], "hexpm"}}
